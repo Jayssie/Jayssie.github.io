@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>从Data Science角度处理Titanic数据 | MonkeyJ</title>
+    <title>从Data Science分析Titanic数据 | MonkeyJ</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,15 +12,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="biubiubiu">
+    <meta name="description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="从Data Science角度处理Titanic数据 | MonkeyJ">
-    <meta name="twitter:description" content="biubiubiu">
+    <meta name="twitter:title" content="从Data Science分析Titanic数据 | MonkeyJ">
+    <meta name="twitter:description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="从Data Science角度处理Titanic数据 | MonkeyJ">
-    <meta property="og:description" content="biubiubiu">
+    <meta property="og:title" content="从Data Science分析Titanic数据 | MonkeyJ">
+    <meta property="og:description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
 
     
     <meta name="author" content="Jayssie">
@@ -57,10 +57,10 @@
         <a href="/" title="前往 MonkeyJ 的主页"><img src="/images/avatar.jpg" width="80" alt="MonkeyJ logo" class="panel-cover__logo logo" /></a>
         <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for MonkeyJ">MonkeyJ</a></h1>
         
-        <span class="panel-cover__subtitle panel-subtitle">一只程序媛的杂货铺</span>
+        <span class="panel-cover__subtitle panel-subtitle">你可能看了个假博客</span>
         
         <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">biubiubiu</p>
+        <p class="panel-cover__description">会吉他|会撩妹|会讲法语|就是不会写代码</p>
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
 
         <div class="navigation-wrapper">
@@ -136,25 +136,28 @@
       </span> 
    
     </div>
-    <h1 class="post-title">从Data Science角度处理Titanic数据</h1>
+    <h1 class="post-title">从Data Science分析Titanic数据</h1>
   </header>
 
   <section class="post">
-    <hr>
-<h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h3><ul>
+    <h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h2><ul>
 <li>Anaconda</li>
 <li>Spyder</li>
 <li>Python3</li>
 </ul>
-<hr>
-<p>Anaconda配置python3环境<br><img src="https://github.com/Jayssie/Jayssie.github.io/blob/master/images/posts/blog.png?raw=true" alt="Python3" title="optional title"></p>
-<hr>
-<p>Spyder IPython console中快速安装第三方包的方法</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install pandas</span><br></pre></td></tr></table></figure>
-<h3 id="2-数据分析"><a href="#2-数据分析" class="headerlink" title="2. 数据分析"></a>2. 数据分析</h3><h4 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h4><p><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">Titanic</a><br><a href="https://www.kaggle.com/startupsci/titanic-data-science-solutions" target="_blank" rel="noopener">参考代码</a><br>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.</p>
+<h3 id="Anaconda配置python3环境"><a href="#Anaconda配置python3环境" class="headerlink" title="Anaconda配置python3环境"></a>Anaconda配置python3环境</h3><p><img src="/images/kaggle/1.png" alt="Python3" title="optional title"></p>
+<h3 id="Spyder-IPython-console中快速安装第三方包"><a href="#Spyder-IPython-console中快速安装第三方包" class="headerlink" title="Spyder IPython console中快速安装第三方包"></a>Spyder IPython console中快速安装第三方包</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install pandas</span><br></pre></td></tr></table></figure>
+<h2 id="2-数据分析"><a href="#2-数据分析" class="headerlink" title="2. 数据分析"></a>2. 数据分析</h2><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">Titanic</a><br><a href="https://www.kaggle.com/startupsci/titanic-data-science-solutions" target="_blank" rel="noopener">参考代码</a></p>
+<blockquote>
+<p>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.</p>
+</blockquote>
+<blockquote>
 <p>One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.</p>
+</blockquote>
+<blockquote>
 <p>In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.</p>
-<h4 id="kaggle竞赛通用步骤："><a href="#kaggle竞赛通用步骤：" class="headerlink" title="kaggle竞赛通用步骤："></a>kaggle竞赛通用步骤：</h4><ol>
+</blockquote>
+<h3 id="kaggle竞赛通用步骤："><a href="#kaggle竞赛通用步骤：" class="headerlink" title="kaggle竞赛通用步骤："></a>kaggle竞赛通用步骤：</h3><ol>
 <li>问题定义</li>
 <li>获取训练和测试数据</li>
 <li>转换、准备、清洗数据</li>
@@ -163,12 +166,8 @@
 <li>将解决步骤可视化、报告、展示，并得出最后结论</li>
 <li>提交结果</li>
 </ol>
-<hr>
-<p>数据集下载：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ kaggle config path -p  ~/kaggle/</span><br><span class="line">$ kaggle competitions download -c titanic</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Data Science的工作流程主要解决以下七个问题：</p>
-<ol>
+<h3 id="数据集下载："><a href="#数据集下载：" class="headerlink" title="数据集下载："></a>数据集下载：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ kaggle config path -p  ~/kaggle/</span><br><span class="line">$ kaggle competitions download -c titanic</span><br></pre></td></tr></table></figure>
+<h3 id="Data-Science的工作流程主要解决以下七个问题："><a href="#Data-Science的工作流程主要解决以下七个问题：" class="headerlink" title="Data Science的工作流程主要解决以下七个问题："></a>Data Science的工作流程主要解决以下七个问题：</h3><ol>
 <li>Classifying 分类：对样本进行分类或归类，了解不同分类与目标之间的含义或相关性。</li>
 <li>Correlating 相关性探索：根据训练数据集中可用的特征来处理问题，即数据集中的哪些特征对目标有重大影响。</li>
 <li>Converting 转换：通常建模阶段需要使用的数据都必须经过数值化处理，即将文本信息转换为数字信息。</li>
@@ -177,7 +176,9 @@
 <li>Creating 创建：基于现有功能或一组功能创建新功能，从而新功能能遵循相关性，转换和完整性目标。</li>
 <li>Charting 图表：如何根据数据的性质和解决方案目标来选择正确的可视化图表和图表。</li>
 </ol>
-<hr>
+<h3 id="数据集分析"><a href="#数据集分析" class="headerlink" title="数据集分析"></a>数据集分析</h3><blockquote>
+<p>Pclass表示船票等级，从1依次递减，SibSp是船上兄弟姐妹的人数，Parch是船上父母以及孩子的人数，Fare乘客费用，Cabin船舱号，Embarked登船港口。可以初步看出年龄中含有缺失值。只有714名乘客所有信息完整。我们的目标是利用这些数据预测乘客在灾难来临时的幸存情况，目标变量是survived，0为死亡或失踪，1为幸存。 </p>
+</blockquote>
 
   </section>
 
@@ -186,20 +187,22 @@
 <section class="read-more">
            
     
-        
-        
                
             <div class="read-more-item">
-                <span class="read-more-item-dim">Older Post</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/03/15/CNN在文本识别中的使用/" title="CNN在文本识别中的使用">CNN在文本识别中的使用</a></h2>
+                <span class="read-more-item-dim">Newer Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/03/16/ML常用库函数/" title="常用函数-Pandas">常用函数-Pandas</a></h2>
                 <p class="excerpt">
                 
-                
+                Pandas库介绍常用姿势
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-03-15T04:38:43.000Z" class="post-list__meta--date date">2018-03-15</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/03/15/CNN在文本识别中的使用/">继续阅读</a></div>
-                       
+                <div class="post-list__meta"><time datetime="2018-03-16T09:27:43.000Z" class="post-list__meta--date date">2018-03-16</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/xi-an/">xi'an</a>
+</span><a class="btn-border-small" href="/2018/03/16/ML常用库函数/">继续阅读</a></div>
+                           
             </div>
+        
+        
         
      
    
