@@ -145,7 +145,7 @@
 <li>Spyder</li>
 <li>Python3</li>
 </ul>
-<h3 id="Anaconda配置python3环境"><a href="#Anaconda配置python3环境" class="headerlink" title="Anaconda配置python3环境"></a>Anaconda配置python3环境</h3><p><img src="/images/kaggle/1.png" alt="Python3" title="optional title"></p>
+<h3 id="Anaconda配置python3环境"><a href="#Anaconda配置python3环境" class="headerlink" title="Anaconda配置python3环境"></a>Anaconda配置python3环境</h3><p><img src="/images/kaggle/1.png" alt="Python3" title="配置环境"></p>
 <h3 id="Spyder-IPython-console中快速安装第三方包"><a href="#Spyder-IPython-console中快速安装第三方包" class="headerlink" title="Spyder IPython console中快速安装第三方包"></a>Spyder IPython console中快速安装第三方包</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install pandas</span><br></pre></td></tr></table></figure>
 <h2 id="2-数据分析"><a href="#2-数据分析" class="headerlink" title="2. 数据分析"></a>2. 数据分析</h2><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">Titanic</a><br><a href="https://www.kaggle.com/startupsci/titanic-data-science-solutions" target="_blank" rel="noopener">参考代码</a></p>
 <blockquote>
@@ -176,8 +176,40 @@
 <li>Creating 创建：基于现有功能或一组功能创建新功能，从而新功能能遵循相关性，转换和完整性目标。</li>
 <li>Charting 图表：如何根据数据的性质和解决方案目标来选择正确的可视化图表和图表。</li>
 </ol>
-<h3 id="数据集分析"><a href="#数据集分析" class="headerlink" title="数据集分析"></a>数据集分析</h3><blockquote>
-<p>Pclass表示船票等级，从1依次递减，SibSp是船上兄弟姐妹的人数，Parch是船上父母以及孩子的人数，Fare乘客费用，Cabin船舱号，Embarked登船港口。可以初步看出年龄中含有缺失值。只有714名乘客所有信息完整。我们的目标是利用这些数据预测乘客在灾难来临时的幸存情况，目标变量是survived，0为死亡或失踪，1为幸存。 </p>
+<h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">survival: 是否存活(0 = No, 1 = Yes)</span><br><span class="line">pclass: 船票等级(1= 1st, 2 = 2nd, 3 = 3rd)</span><br><span class="line">sex：性别	</span><br><span class="line">Age：年龄	</span><br><span class="line">sibsp：兄弟姐妹/配偶	</span><br><span class="line">parch：父母/孩子</span><br><span class="line">ticket：船票号码	</span><br><span class="line">fare：乘客费用	</span><br><span class="line">cabin：船舱号	</span><br><span class="line">embarked：登船港口（C = Cherbourg, Q = Queenstown, S = Southampton）</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在获取到数据后，直接针对数据类型应做的分析：</p>
+<ul>
+<li>检查可用的特征名称</li>
+<li>特征是什么样的：类别、数字、混合型</li>
+<li>哪些特征可能有错误数据或类型</li>
+<li>哪些特征值可能包含空、null(NAN)、empty</li>
+<li>数据是什么类型的：整形、浮点型、对象</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取特征名称</span></span><br><span class="line">print(train_df.columns.values)</span><br><span class="line"></span><br><span class="line">[<span class="string">'PassengerId'</span> <span class="string">'Survived'</span> <span class="string">'Pclass'</span> <span class="string">'Name'</span> <span class="string">'Sex'</span> <span class="string">'Age'</span> <span class="string">'SibSp'</span> <span class="string">'Parch'</span></span><br><span class="line"> <span class="string">'Ticket'</span> <span class="string">'Fare'</span> <span class="string">'Cabin'</span> <span class="string">'Embarked'</span>]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可用的特征名称：12个特征，其中目标特征为Survived</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取头和尾部5个数据</span></span><br><span class="line">print(train_df.head())</span><br><span class="line">print(train_df.tail())</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">   PassengerId  Survived  Pclass  \</span><br><span class="line">0            1         0       3   </span><br><span class="line">1            2         1       1   </span><br><span class="line">2            3         1       3   </span><br><span class="line">3            4         1       1   </span><br><span class="line">4            5         0       3   </span><br><span class="line"></span><br><span class="line">                                                Name     Sex   Age  SibSp  \</span><br><span class="line">0                            Braund, Mr. Owen Harris    male  22.0      1   </span><br><span class="line">1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1   </span><br><span class="line">2                             Heikkinen, Miss. Laina  female  26.0      0   </span><br><span class="line">3       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1   </span><br><span class="line">4                           Allen, Mr. William Henry    male  35.0      0   </span><br><span class="line"></span><br><span class="line">   Parch            Ticket     Fare Cabin Embarked  </span><br><span class="line">0      0         A/5 21171   7.2500   NaN        S  </span><br><span class="line">1      0          PC 17599  71.2833   C85        C  </span><br><span class="line">2      0  STON/O2. 3101282   7.9250   NaN        S  </span><br><span class="line">3      0            113803  53.1000  C123        S  </span><br><span class="line">4      0            373450   8.0500   NaN        S</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 判断数据集中是否为空</span></span><br><span class="line">train_df.isnull().any()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Out[13]: </span><br><span class="line">PassengerId    False</span><br><span class="line">Survived       False</span><br><span class="line">Pclass         False</span><br><span class="line">Name           False</span><br><span class="line">Sex            False</span><br><span class="line">Age             True</span><br><span class="line">SibSp          False</span><br><span class="line">Parch          False</span><br><span class="line">Ticket         False</span><br><span class="line">Fare           False</span><br><span class="line">Cabin           True</span><br><span class="line">Embarked        True</span><br><span class="line">dtype: bool</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>观察得到：</p>
+<ol>
+<li>分类型的数据用于区分样本集中的不同种类数据，常见的有名词、次序、比例、间隔分类<br>数值型的数据根据不同样本会变化，常见的有离散、连续、基于时间序列</li>
+<li>分类型数据：Survived, Pclass(有次序), Sex, Embarked</li>
+<li>数值型数据：Age, Fare(连续), Sibsp, Parch(离散)</li>
+<li>混合型数据：Ticket, Cabin(字母数字混合)</li>
+<li>错误数据或可优化数据：检测整个数据集十分地困难，但是通过抽样观察可以发现Name这一特征值中包含大量title, 以及一些符号等不常规名称-&gt;可以优化</li>
+<li>不全的数据：Cabin, Age, Embarked中有为空的数据，其中Cabin, Age在测试集中也有为空</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取数据类型信息</span></span><br><span class="line">print(train_df.info())</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">RangeIndex: 891 entries, 0 to 890</span><br><span class="line">Data columns (total 12 columns):</span><br><span class="line">PassengerId    891 non-null int64</span><br><span class="line">Survived       891 non-null int64</span><br><span class="line">Pclass         891 non-null int64</span><br><span class="line">Name           891 non-null object</span><br><span class="line">Sex            891 non-null object</span><br><span class="line">Age            714 non-null float64</span><br><span class="line">SibSp          891 non-null int64</span><br><span class="line">Parch          891 non-null int64</span><br><span class="line">Ticket         891 non-null object</span><br><span class="line">Fare           891 non-null float64</span><br><span class="line">Cabin          204 non-null object</span><br><span class="line">Embarked       889 non-null object</span><br><span class="line">dtypes: float64(2), int64(5), object(5)</span><br><span class="line">memory usage: 83.6+ KB</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>分析得到：<br>5个整型数据，2个浮点型，5个对象数据</p>
 </blockquote>
 
   </section>
@@ -194,6 +226,9 @@
                 <p class="excerpt">
                 
                 Pandas库介绍常用姿势
+分析数据格式:
+
+1234567891011# 获取列名称，一般为特征名称print(train_df.columns.values)# 对数据集进行抽样检查train_df.sample(n=100)# 查看数据集的前5和后5个样本print(train_df.head
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-03-16T09:27:43.000Z" class="post-list__meta--date date">2018-03-16</time> &#8226; <span class="post-list__meta--tags tags">于 

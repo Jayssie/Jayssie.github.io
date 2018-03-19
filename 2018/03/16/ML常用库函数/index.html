@@ -140,7 +140,14 @@
   </header>
 
   <section class="post">
-    <h2 id="Pandas库介绍"><a href="#Pandas库介绍" class="headerlink" title="Pandas库介绍"></a>Pandas库介绍</h2><h2 id="常用姿势"><a href="#常用姿势" class="headerlink" title="常用姿势"></a>常用姿势</h2>
+    <h2 id="Pandas库介绍"><a href="#Pandas库介绍" class="headerlink" title="Pandas库介绍"></a>Pandas库介绍</h2><h2 id="常用姿势"><a href="#常用姿势" class="headerlink" title="常用姿势"></a>常用姿势</h2><ul>
+<li>分析数据格式:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取列名称，一般为特征名称</span></span><br><span class="line">print(train_df.columns.values)</span><br><span class="line"><span class="comment"># 对数据集进行抽样检查</span></span><br><span class="line">train_df.sample(n=<span class="number">100</span>)</span><br><span class="line"><span class="comment"># 查看数据集的前5和后5个样本</span></span><br><span class="line">print(train_df.head())</span><br><span class="line">print(train_df.tail())</span><br><span class="line"><span class="comment"># 获取数据类型信息</span></span><br><span class="line">print(train_df.info())</span><br><span class="line"><span class="comment"># 检查数据集中是否有空值，哪些值可以为空</span></span><br><span class="line">train_df.isnull().any()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分析数据统计特征：</li>
+</ul>
+
   </section>
 
 </article>
