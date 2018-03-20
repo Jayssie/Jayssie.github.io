@@ -144,7 +144,33 @@
 <blockquote>
 <p>Seaborn其实是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn就能做出很具有吸引力的图。</p>
 </blockquote>
-
+<h3 id="如何使用Seaborn对Matplotliib的输出外观进行控制"><a href="#如何使用Seaborn对Matplotliib的输出外观进行控制" class="headerlink" title="如何使用Seaborn对Matplotliib的输出外观进行控制"></a>如何使用Seaborn对Matplotliib的输出外观进行控制</h3><blockquote>
+<p>样式控制：axes_style() and set_style()</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.set_style(<span class="string">"darkgrid"</span>)</span><br><span class="line"><span class="comment"># 返回可传参数的字典</span></span><br><span class="line">sns.axes_style(style=<span class="keyword">None</span>, rc=<span class="keyword">None</span>) </span><br><span class="line"><span class="comment"># 字典详细设置</span></span><br><span class="line">sns.set_style(<span class="string">"ticks"</span>, &#123;<span class="string">"xtick.major.size"</span>: <span class="number">8</span>, <span class="string">"ytick.major.size"</span>: <span class="number">8</span>&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>darkgrid 黑色网格（默认）</li>
+<li>whitegrid 白色网格</li>
+<li>dark 黑色背景</li>
+<li>white 白色背景</li>
+<li>ticks 应该是四周都有刻度线的白背景</li>
+</ul>
+<blockquote>
+<p>用despine()进行边框控制</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sns.despine()</span><br><span class="line">sns.despine(left=<span class="keyword">True</span>)</span><br><span class="line">sns.despine(fig=<span class="keyword">None</span>, ax=<span class="keyword">None</span>, top=<span class="keyword">True</span>, right=<span class="keyword">True</span>, left=<span class="keyword">True</span>, bottom=<span class="keyword">False</span>, offset=<span class="keyword">None</span>, trim=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>临时设定图形样式</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#211代表2行1列当前放在第一号格子</span></span><br><span class="line"><span class="keyword">with</span> sns.axes_style(<span class="string">"darkgrid"</span>):</span><br><span class="line">    plt.subplot(<span class="number">211</span>)</span><br><span class="line">    sinplot()</span><br><span class="line">plt.subplot(<span class="number">212</span>)</span><br><span class="line">sinplot(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置Context按相对尺寸的顺序(线条越来越粗)，分别是paper，notebook, talk, poster</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.set_context(<span class="string">"paper"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>调色板</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#deep, muted, pastel, bright, dark, 和 colorblind</span></span><br><span class="line">current_palette = sns.color_palette(<span class="string">"dark"</span>) <span class="comment"># 直接传入对应的参数即可变化</span></span><br><span class="line">sns.palplot(current_palette)</span><br></pre></td></tr></table></figure>
   </section>
 
 </article>
