@@ -67,7 +67,7 @@
           <div>
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="Blogを読む" class="blog-button">Blog</a></li>
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
             
               <li class="navigation__item"><a href="/archives">Archives</a></li>
             
@@ -132,7 +132,7 @@
   <a class="tag-link" href="/tags/xi-an/">xi'an</a>
  </span>
       <span class="page-pv">
-       No. <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
@@ -177,16 +177,13 @@
 <li>Charting 图表：如何根据数据的性质和解决方案目标来选择正确的可视化图表和图表。</li>
 </ol>
 <h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">survival: 是否存活(0 = No, 1 = Yes)</span><br><span class="line">pclass: 船票等级(1= 1st, 2 = 2nd, 3 = 3rd)</span><br><span class="line">sex：性别	</span><br><span class="line">Age：年龄	</span><br><span class="line">sibsp：兄弟姐妹/配偶	</span><br><span class="line">parch：父母/孩子</span><br><span class="line">ticket：船票号码	</span><br><span class="line">fare：乘客费用	</span><br><span class="line">cabin：船舱号	</span><br><span class="line">embarked：登船港口（C = Cherbourg, Q = Queenstown, S = Southampton）</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在获取到数据后，直接针对数据类型应做的分析：</p>
-<ul>
+<h3 id="直接针对数据类型应做的分析："><a href="#直接针对数据类型应做的分析：" class="headerlink" title="直接针对数据类型应做的分析："></a>直接针对数据类型应做的分析：</h3><ul>
 <li>检查可用的特征名称</li>
 <li>特征是什么样的：类别、数字、混合型</li>
 <li>哪些特征可能有错误数据或类型</li>
 <li>哪些特征值可能包含空、null(NAN)、empty</li>
 <li>数据是什么类型的：整形、浮点型、对象</li>
 </ul>
-</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取特征名称</span></span><br><span class="line">print(train_df.columns.values)</span><br><span class="line"></span><br><span class="line">[<span class="string">'PassengerId'</span> <span class="string">'Survived'</span> <span class="string">'Pclass'</span> <span class="string">'Name'</span> <span class="string">'Sex'</span> <span class="string">'Age'</span> <span class="string">'SibSp'</span> <span class="string">'Parch'</span></span><br><span class="line"> <span class="string">'Ticket'</span> <span class="string">'Fare'</span> <span class="string">'Cabin'</span> <span class="string">'Embarked'</span>]</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>可用的特征名称：12个特征，其中目标特征为Survived</p>
@@ -209,8 +206,57 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取数据类型信息</span></span><br><span class="line">print(train_df.info())</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">RangeIndex: 891 entries, 0 to 890</span><br><span class="line">Data columns (total 12 columns):</span><br><span class="line">PassengerId    891 non-null int64</span><br><span class="line">Survived       891 non-null int64</span><br><span class="line">Pclass         891 non-null int64</span><br><span class="line">Name           891 non-null object</span><br><span class="line">Sex            891 non-null object</span><br><span class="line">Age            714 non-null float64</span><br><span class="line">SibSp          891 non-null int64</span><br><span class="line">Parch          891 non-null int64</span><br><span class="line">Ticket         891 non-null object</span><br><span class="line">Fare           891 non-null float64</span><br><span class="line">Cabin          204 non-null object</span><br><span class="line">Embarked       889 non-null object</span><br><span class="line">dtypes: float64(2), int64(5), object(5)</span><br><span class="line">memory usage: 83.6+ KB</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>分析得到：<br>5个整型数据，2个浮点型，5个对象数据</p>
+<p>5个整型数据，2个浮点型，5个对象数据</p>
 </blockquote>
+<h3 id="进一步对数值型数据的统计特性进行分析："><a href="#进一步对数值型数据的统计特性进行分析：" class="headerlink" title="进一步对数值型数据的统计特性进行分析："></a>进一步对数值型数据的统计特性进行分析：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对数值型数据的统计分析</span></span><br><span class="line">train_df.describe()</span><br><span class="line"><span class="comment"># 定义不同的百分线分析不同数据</span></span><br><span class="line">train_df[<span class="string">'Survived'</span>].describe(percentiles=[<span class="number">.61</span>, <span class="number">.62</span>])</span><br><span class="line">train_df[<span class="string">'Parch'</span>].describe(percentiles=[<span class="number">.75</span>, <span class="number">.8</span>])</span><br><span class="line">train_df[<span class="string">'SibSp'</span>].describe(percentiles=[<span class="number">.68</span>, <span class="number">.69</span>])</span><br><span class="line">train_df[[<span class="string">'Age'</span>,<span class="string">'Fare'</span>]].describe(percentiles=[<span class="number">.1</span>, <span class="number">.2</span>, <span class="number">.3</span>, <span class="number">.4</span>, <span class="number">.5</span>, <span class="number">.6</span>, <span class="number">.7</span>, <span class="number">.8</span>, <span class="number">.9</span>, <span class="number">.99</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">----------------------------------------</span><br><span class="line">       PassengerId    Survived      Pclass         Age       SibSp  \</span><br><span class="line">count   891.000000  891.000000  891.000000  714.000000  891.000000   </span><br><span class="line">mean    446.000000    0.383838    2.308642   29.699118    0.523008   </span><br><span class="line">std     257.353842    0.486592    0.836071   14.526497    1.102743   </span><br><span class="line">min       1.000000    0.000000    1.000000    0.420000    0.000000   </span><br><span class="line">25%     223.500000    0.000000    2.000000   20.125000    0.000000   </span><br><span class="line">50%     446.000000    0.000000    3.000000   28.000000    0.000000   </span><br><span class="line">75%     668.500000    1.000000    3.000000   38.000000    1.000000   </span><br><span class="line">max     891.000000    1.000000    3.000000   80.000000    8.000000   </span><br><span class="line">----------------------------------------</span><br><span class="line">count    891.000000</span><br><span class="line">mean       0.383838</span><br><span class="line">std        0.486592</span><br><span class="line">min        0.000000</span><br><span class="line">50%        0.000000</span><br><span class="line">61%        0.000000</span><br><span class="line">62%        1.000000</span><br><span class="line">max        1.000000</span><br><span class="line">Name: Survived, dtype: float64</span><br><span class="line">----------------------------------------</span><br><span class="line">count    891.000000</span><br><span class="line">mean       0.381594</span><br><span class="line">std        0.806057</span><br><span class="line">min        0.000000</span><br><span class="line">50%        0.000000</span><br><span class="line">75%        0.000000</span><br><span class="line">80%        1.000000</span><br><span class="line">max        6.000000</span><br><span class="line">Name: Parch, dtype: float64</span><br><span class="line">----------------------------------------</span><br><span class="line">count    891.000000</span><br><span class="line">mean       0.523008</span><br><span class="line">std        1.102743</span><br><span class="line">min        0.000000</span><br><span class="line">50%        0.000000</span><br><span class="line">68%        0.000000</span><br><span class="line">69%        1.000000</span><br><span class="line">max        8.000000</span><br><span class="line">Name: SibSp, dtype: float64</span><br><span class="line">----------------------------------------</span><br><span class="line">              Age        Fare</span><br><span class="line">count  714.000000  891.000000</span><br><span class="line">mean    29.699118   32.204208</span><br><span class="line">std     14.526497   49.693429</span><br><span class="line">min      0.420000    0.000000</span><br><span class="line">10%     14.000000    7.550000</span><br><span class="line">20%     19.000000    7.854200</span><br><span class="line">30%     22.000000    8.050000</span><br><span class="line">40%     25.000000   10.500000</span><br><span class="line">50%     28.000000   14.454200</span><br><span class="line">60%     31.800000   21.679200</span><br><span class="line">70%     36.000000   27.000000</span><br><span class="line">80%     41.000000   39.687500</span><br><span class="line">90%     50.000000   77.958300</span><br><span class="line">99%     65.870000  249.006220</span><br><span class="line">max     80.000000  512.329200</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>分析得到：</p>
+<ul>
+<li>训练集中一个有891个样本</li>
+<li>目标特征Survived由0和1值构成</li>
+<li>存活率约为38%</li>
+<li>75%以上的旅客没有父母/孩子陪伴</li>
+<li>68%以上的旅客没有兄弟/配偶陪伴</li>
+<li>65-80岁的老人仅占1%</li>
+<li>仅有1%的乘客付了512$的高价</li>
+</ul>
+</blockquote>
+<h3 id="对分类型数据的统计特性进行分析："><a href="#对分类型数据的统计特性进行分析：" class="headerlink" title="对分类型数据的统计特性进行分析："></a>对分类型数据的统计特性进行分析：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_df.describe(include=[<span class="string">'O'</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">----------------------------------------</span><br><span class="line">                               Name   Sex Ticket        Cabin Embarked</span><br><span class="line">count                           891   891    891          204      889</span><br><span class="line">unique                          891     2    681          147        3</span><br><span class="line">top     Compton, Miss. Sara Rebecca  male   1601  C23 C25 C27        S</span><br><span class="line">freq                              1   577      7            4      644</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>分析得到：</p>
+<ul>
+<li>姓名是唯一的(count=unique=891)</li>
+<li>性别只有两个值，其中男性占了577/891(65%)</li>
+<li>Cabin, Tiket都有部分重复值，说明有旅客分享票和船舱</li>
+<li>Embarked有3个可能值，其中S占较大多数644/889</li>
+</ul>
+</blockquote>
+<h3 id="对7C问题进行分析："><a href="#对7C问题进行分析：" class="headerlink" title="对7C问题进行分析："></a>对7C问题进行分析：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过groupby查看性别、座位等级和是否成活的关系</span></span><br><span class="line">train_df[[<span class="string">'Sex'</span>,<span class="string">'Survived'</span>]].groupby(by=<span class="string">'Sex'</span>, as_index=<span class="keyword">False</span>).mean().sort_values(by=<span class="string">'Survived'</span>, ascending=<span class="keyword">False</span>)</span><br><span class="line">train_df[[<span class="string">'Pclass'</span>, <span class="string">'Survived'</span>]].groupby(by=<span class="string">'Pclass'</span>, as_index=<span class="keyword">False</span>).mean().sort_values(by=<span class="string">'Survived'</span>, ascending=<span class="keyword">False</span>)</span><br><span class="line"><span class="comment"># 通过直方图查看年龄不同间断的分布</span></span><br><span class="line">g = sns.FacetGrid(train_df, col=<span class="string">'Survived'</span>)</span><br><span class="line">g.map(plt.hist, <span class="string">'Age'</span>, bins=<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">----------------------------------------</span><br><span class="line">      Sex  Survived</span><br><span class="line">0  female  0.742038</span><br><span class="line">1    male  0.188908</span><br><span class="line">----------------------------------------</span><br><span class="line">   Pclass  Survived</span><br><span class="line">0       1  0.629630</span><br><span class="line">1       2  0.472826</span><br><span class="line">2       3  0.242363</span><br></pre></td></tr></table></figure>
+<p><img src="/images/kaggle/2.png" alt="" title="年龄分布"></p>
+<ol>
+<li><p>Classifying 分类：</p>
+<ul>
+<li>性别(Sex)：女性存活的比例高于男性 74%</li>
+<li>年龄(Age)：年龄分布</li>
+<li>一等座(Pclass)：一等座存活的比例 62%</li>
+</ul>
+</li>
+<li><p>Correlating 相关性探索：根据训练数据集中可用的特征来处理问题，即数据集中的哪些特征对目标有重大影响。</p>
+</li>
+<li><p>Converting 转换：通常建模阶段需要使用的数据都必须经过数值化处理，即将文本信息转换为数字信息。</p>
+</li>
+<li><p>Completing 补全：估计特征中的任何缺失值。当没有缺失值时，模型算法可能效果最好。</p>
+</li>
+<li><p>Correcting 修正：查找特征内的错误或可能的不准确值，并尝试对这些值进行校正或排除包含错误的样本，即找出样本集或特征中outliers，当某个特征没有明显表现力时，可以将其忽略。</p>
+</li>
+<li><p>Creating 创建：基于现有功能或一组功能创建新功能，从而新功能能遵循相关性，转换和完整性目标。</p>
+</li>
+<li><p>Charting 图表：如何根据数据的性质和解决方案目标来选择正确的可视化图表和图表。</p>
+</li>
+</ol>
 
   </section>
 
@@ -221,19 +267,22 @@
     
                
             <div class="read-more-item">
-                <span class="read-more-item-dim">新しい記事</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/03/16/ML常用库函数/" title="常用函数-Pandas">常用函数-Pandas</a></h2>
+                <span class="read-more-item-dim">Newer Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/03/16/Python数据分析-Pandas/" title="Python数据分析-Pandas">Python数据分析-Pandas</a></h2>
                 <p class="excerpt">
                 
-                Pandas库介绍常用姿势
-分析数据格式:
+                Pandas库介绍
+Pandas是基于Numpy的一个库，主要用来进行数据分析。可以完成数据处理和分析的五个典型步骤，而不管数据的来源 - 加载，准备，操作，模型和分析。
 
-1234567891011# 获取列名称，一般为特征名称print(train_df.columns.values)# 对数据集进行抽样检查train_df.sample(n=100)# 查看数据集的前5和后5个样本print(train_df.head
+Pandas的主要特点：
+
+快速高效的DataFrame对象，具有默认和自定义的索引。
+将数据从不同文件格式加载到内存中的数据
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-03-16T09:27:43.000Z" class="post-list__meta--date date">2018-03-16</time> &#8226; <span class="post-list__meta--tags tags">于 
   <a class="tag-link" href="/tags/xi-an/">xi'an</a>
-</span><a class="btn-border-small" href="/2018/03/16/ML常用库函数/">继续阅读</a></div>
+</span><a class="btn-border-small" href="/2018/03/16/Python数据分析-Pandas/">继续阅读</a></div>
                            
             </div>
         

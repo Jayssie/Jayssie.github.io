@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>Python数据分析-Pandas | MonkeyJ</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Python数据分析-Pandas | MonkeyJ">
+    <meta name="twitter:description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Python数据分析-Pandas | MonkeyJ">
+    <meta property="og:description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
+
+    
+    <meta name="author" content="Jayssie">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="https://jayssie.github.io/2018/03/16/Python数据分析-Pandas/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 MonkeyJ 的主页"><img src="/images/avatar.jpg" width="80" alt="MonkeyJ logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for MonkeyJ">MonkeyJ</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">你可能看了个假博客</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">会吉他|会撩妹|会讲法语|就是不会写代码</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/archives">Archives</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Jayssie" title="GitHub" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-03-16T09:27:43.000Z" class="post-list__meta--date date">2018-03-16</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/xi-an/">xi'an</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">Python数据分析-Pandas</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="Pandas库介绍"><a href="#Pandas库介绍" class="headerlink" title="Pandas库介绍"></a>Pandas库介绍</h2><blockquote>
+<p>Pandas是基于Numpy的一个库，主要用来进行数据分析。<br>可以完成数据处理和分析的五个典型步骤，而不管数据的来源 - 加载，准备，操作，模型和分析。</p>
+</blockquote>
+<p>Pandas的主要特点：</p>
+<ul>
+<li>快速高效的DataFrame对象，具有默认和自定义的索引。</li>
+<li>将数据从不同文件格式加载到内存中的数据对象的工具。</li>
+<li>丢失数据的数据对齐和综合处理。</li>
+<li>重组和摆动日期集。</li>
+<li>基于标签的切片，索引和大数据集的子集。</li>
+<li>可以删除或插入来自数据结构的列。</li>
+<li>按数据分组进行聚合和转换。</li>
+<li>高性能合并和数据加入。</li>
+<li>时间序列功能。</li>
+</ul>
+<h2 id="常用姿势"><a href="#常用姿势" class="headerlink" title="常用姿势"></a>常用姿势</h2><ul>
+<li>分析数据格式:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取列名称，一般为特征名称</span></span><br><span class="line">print(train_df.columns.values)</span><br><span class="line"><span class="comment"># 对数据集进行抽样检查</span></span><br><span class="line">train_df.sample(n=<span class="number">100</span>)</span><br><span class="line"><span class="comment"># 查看数据集的前5和后5个样本</span></span><br><span class="line">print(train_df.head())</span><br><span class="line">print(train_df.tail())</span><br><span class="line"><span class="comment"># 获取数据类型信息</span></span><br><span class="line">print(train_df.info())</span><br><span class="line"><span class="comment"># 检查数据集中是否有空值，哪些值可以为空</span></span><br><span class="line">train_df.isnull().any()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分析数据的统计特征：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查每个特征的统计特性</span></span><br><span class="line">train_df.describe()</span><br><span class="line"><span class="comment"># count 计数</span></span><br><span class="line"><span class="comment"># mean 平均值</span></span><br><span class="line"><span class="comment"># std 标准差</span></span><br><span class="line"><span class="comment"># min 最小值</span></span><br><span class="line"><span class="comment"># 25% 50% 75% 四分数和中位数</span></span><br><span class="line"><span class="comment"># max 最大值</span></span><br><span class="line">train_df[<span class="string">'Survived'</span>].describe(percentiles=[<span class="number">.61</span>, <span class="number">.62</span>])</span><br><span class="line"><span class="comment"># percentiles 自定义百分线，经常用来判断数据的分布情况</span></span><br><span class="line">train_df.describe(include=[<span class="string">'O'</span>])</span><br><span class="line"><span class="comment"># count		计数</span></span><br><span class="line"><span class="comment"># unique	是否唯一</span></span><br><span class="line"><span class="comment"># top		频率最高</span></span><br><span class="line"><span class="comment"># freq		频率次数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">       PassengerId    Survived      Pclass         Age       SibSp  \</span><br><span class="line">count   891.000000  891.000000  891.000000  714.000000  891.000000   </span><br><span class="line">mean    446.000000    0.383838    2.308642   29.699118    0.523008   </span><br><span class="line">std     257.353842    0.486592    0.836071   14.526497    1.102743   </span><br><span class="line">min       1.000000    0.000000    1.000000    0.420000    0.000000   </span><br><span class="line">25%     223.500000    0.000000    2.000000   20.125000    0.000000   </span><br><span class="line">50%     446.000000    0.000000    3.000000   28.000000    0.000000   </span><br><span class="line">75%     668.500000    1.000000    3.000000   38.000000    1.000000   </span><br><span class="line">max     891.000000    1.000000    3.000000   80.000000    8.000000   </span><br><span class="line">----------------------------------------</span><br><span class="line">                               Name   Sex Ticket        Cabin Embarked</span><br><span class="line">count                           891   891    891          204      889</span><br><span class="line">unique                          891     2    681          147        3</span><br><span class="line">top     Compton, Miss. Sara Rebecca  male   1601  C23 C25 C27        S</span><br><span class="line">freq                              1   577      7            4      644</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Newer Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/03/20/Python可视化-Seaborn/" title="Python数据可视化-Seaborn">Python数据可视化-Seaborn</a></h2>
+                <p class="excerpt">
+                
+                Seaborn库介绍官方API官方示例
+
+Seaborn其实是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn就能做出很具有吸引力的图。
+
+
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-03-20T04:28:59.000Z" class="post-list__meta--date date">2018-03-20</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/xi-an/">xi'an</a>
+</span><a class="btn-border-small" href="/2018/03/20/Python可视化-Seaborn/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/03/15/kaggle入门/" title="从Data Science分析Titanic数据">从Data Science分析Titanic数据</a></h2>
+                <p class="excerpt">
+                
+                1. 环境搭建
+Anaconda
+Spyder
+Python3
+
+Anaconda配置python3环境
+Spyder IPython console中快速安装第三方包1!pip install pandas
+2. 数据分析题目分析Titanic参考代码
+
+The sinking of the RM
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-03-15T08:52:46.000Z" class="post-list__meta--date date">2018-03-15</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/xi-an/">xi'an</a>
+</span><a class="btn-border-small" href="/2018/03/15/kaggle入门/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 Jayssie - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
