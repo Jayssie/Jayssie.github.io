@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>常用函数-Pandas | MonkeyJ</title>
+    <title>machinelearning学习笔记 | MonkeyJ</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="常用函数-Pandas | MonkeyJ">
+    <meta name="twitter:title" content="machinelearning学习笔记 | MonkeyJ">
     <meta name="twitter:description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="常用函数-Pandas | MonkeyJ">
+    <meta property="og:title" content="machinelearning学习笔记 | MonkeyJ">
     <meta property="og:description" content="会吉他|会撩妹|会讲法语|就是不会写代码">
 
     
@@ -35,7 +35,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="https://jayssie.github.io/2018/03/16/ML常用库函数/"/>
+    <link rel="canonical" href="https://jayssie.github.io/2018/05/08/machinelearning学习笔记/"/>
 
                  
 </head>
@@ -67,7 +67,7 @@
           <div>
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="Blogを読む" class="blog-button">Blog</a></li>
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
             
               <li class="navigation__item"><a href="/archives">Archives</a></li>
             
@@ -128,25 +128,20 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2018-03-16T09:27:43.000Z" class="post-list__meta--date date">2018-03-16</time> &#8226; <span class="post-meta__tags tags">于 
-  <a class="tag-link" href="/tags/xi-an/">xi'an</a>
- </span>
+      <time datetime="2018-05-08T06:50:34.000Z" class="post-list__meta--date date">2018-05-08</time> &#8226; <span class="post-meta__tags tags">于  </span>
       <span class="page-pv">
-       No. <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">常用函数-Pandas</h1>
+    <h1 class="post-title">machinelearning学习笔记</h1>
   </header>
 
   <section class="post">
-    <h2 id="Pandas库介绍"><a href="#Pandas库介绍" class="headerlink" title="Pandas库介绍"></a>Pandas库介绍</h2><h2 id="常用姿势"><a href="#常用姿势" class="headerlink" title="常用姿势"></a>常用姿势</h2><ul>
-<li>分析数据格式:</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取列名称，一般为特征名称</span></span><br><span class="line">print(train_df.columns.values)</span><br><span class="line"><span class="comment"># 对数据集进行抽样检查</span></span><br><span class="line">train_df.sample(n=<span class="number">100</span>)</span><br><span class="line"><span class="comment"># 查看数据集的前5和后5个样本</span></span><br><span class="line">print(train_df.head())</span><br><span class="line">print(train_df.tail())</span><br><span class="line"><span class="comment"># 获取数据类型信息</span></span><br><span class="line">print(train_df.info())</span><br><span class="line"><span class="comment"># 检查数据集中是否有空值，哪些值可以为空</span></span><br><span class="line">train_df.isnull().any()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>分析数据统计特征：</li>
-</ul>
+    <p><a href="http://www.ai-start.com/ml2014/html/week1.html" target="_blank" rel="noopener">Week1</a></p>
+<h2 id="1-机器学习-Introduction"><a href="#1-机器学习-Introduction" class="headerlink" title="1.机器学习 Introduction"></a>1.机器学习 Introduction</h2><h3 id="1-1监督学习"><a href="#1-1监督学习" class="headerlink" title="1.1监督学习"></a>1.1监督学习</h3><p>监督学习:指的就是我们给学习算法一个数据集。这个数据集由“正确答案”组成。<br>回归问题:我们在试着推测出这一系列连续值属性。 eg.房价预测<br>分类问题:我们试着推测出离散的输出值。 eg.良性/恶性肿瘤</p>
+<h3 id="1-2无监督学习"><a href="#1-2无监督学习" class="headerlink" title="1.2无监督学习"></a>1.2无监督学习</h3><p>无监督学习:无监督学习中没有任何的标签或者是有相同的标签或者就是没标签。<br>聚类算法:针对数据集，无监督学习就能判断出数据有两个不同的聚集簇。自动地找到数据中的结构。</p>
+<h2 id="2-单变量线性回归-Linear-Regression-with-One-Variable"><a href="#2-单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="2.单变量线性回归 Linear Regression with One Variable"></a>2.单变量线性回归 Linear Regression with One Variable</h2><p>一个单变量回归模型可以被描述为:<br><a href="/images/machinelearning/1.png" title="回归问题"></a></p>
 
   </section>
 
@@ -159,25 +154,16 @@
         
                
             <div class="read-more-item">
-                <span class="read-more-item-dim">以前の記事</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/03/15/kaggle入门/" title="从Data Science分析Titanic数据">从Data Science分析Titanic数据</a></h2>
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/05/08/deeplearning学习笔记/" title="deeplearning学习笔记">deeplearning学习笔记</a></h2>
                 <p class="excerpt">
                 
-                1. 环境搭建
-Anaconda
-Spyder
-Python3
+                目前在自学深度学习的一些知识，这篇博客记录一下再学习过程中遇到的知识重点及难点。
+深度学习引言 Introduction to Deep LearningRelu激活函数：全称 Rectified Linear Unit， Rectify（修正）可以理解为max(x,0)
 
-Anaconda配置python3环境
-Spyder IPython console中快速安装第三方包1!pip install pandas
-2. 数据分析题目分析Titanic参考代码
-
-The sinking of the RM
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-03-15T08:52:46.000Z" class="post-list__meta--date date">2018-03-15</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/xi-an/">xi'an</a>
-</span><a class="btn-border-small" href="/2018/03/15/kaggle入门/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-05-08T03:27:25.000Z" class="post-list__meta--date date">2018-05-08</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/05/08/deeplearning学习笔记/">继续阅读</a></div>
                        
             </div>
         
