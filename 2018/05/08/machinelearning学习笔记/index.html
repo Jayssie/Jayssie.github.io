@@ -67,7 +67,7 @@
           <div>
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+              <li class="navigation__item"><a href="/#blog" title="Blogを読む" class="blog-button">Blog</a></li>
             
               <li class="navigation__item"><a href="/archives">Archives</a></li>
             
@@ -130,7 +130,7 @@
     <div class="post-meta">
       <time datetime="2018-05-08T06:50:34.000Z" class="post-list__meta--date date">2018-05-08</time> &#8226; <span class="post-meta__tags tags">于  </span>
       <span class="page-pv">
-       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+       No. <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
@@ -139,9 +139,12 @@
 
   <section class="post">
     <p><a href="http://www.ai-start.com/ml2014/html/week1.html" target="_blank" rel="noopener">Week1</a></p>
-<h2 id="1-机器学习-Introduction"><a href="#1-机器学习-Introduction" class="headerlink" title="1.机器学习 Introduction"></a>1.机器学习 Introduction</h2><h3 id="1-1监督学习"><a href="#1-1监督学习" class="headerlink" title="1.1监督学习"></a>1.1监督学习</h3><p>监督学习:指的就是我们给学习算法一个数据集。这个数据集由“正确答案”组成。<br>回归问题:我们在试着推测出这一系列连续值属性。 eg.房价预测<br>分类问题:我们试着推测出离散的输出值。 eg.良性/恶性肿瘤</p>
+<h2 id="1-机器学习-Introduction"><a href="#1-机器学习-Introduction" class="headerlink" title="1.机器学习(Introduction)"></a>1.机器学习(Introduction)</h2><h3 id="1-1监督学习"><a href="#1-1监督学习" class="headerlink" title="1.1监督学习"></a>1.1监督学习</h3><p>监督学习:指的就是我们给学习算法一个数据集。这个数据集由“正确答案”组成。<br>回归问题:我们在试着推测出这一系列连续值属性。 eg.房价预测<br>分类问题:我们试着推测出离散的输出值。 eg.良性/恶性肿瘤</p>
 <h3 id="1-2无监督学习"><a href="#1-2无监督学习" class="headerlink" title="1.2无监督学习"></a>1.2无监督学习</h3><p>无监督学习:无监督学习中没有任何的标签或者是有相同的标签或者就是没标签。<br>聚类算法:针对数据集，无监督学习就能判断出数据有两个不同的聚集簇。自动地找到数据中的结构。</p>
-<h2 id="2-单变量线性回归-Linear-Regression-with-One-Variable"><a href="#2-单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="2.单变量线性回归 Linear Regression with One Variable"></a>2.单变量线性回归 Linear Regression with One Variable</h2><p>一个单变量回归模型可以被描述为:<br><a href="/images/machinelearning/1.png" title="回归问题"></a></p>
+<h2 id="2-单变量线性回归-Linear-Regression-with-One-Variable"><a href="#2-单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="2.单变量线性回归(Linear Regression with One Variable)"></a>2.单变量线性回归(Linear Regression with One Variable)</h2><p>###2.1模型表示<br>一个单变量回归模型可以被描述为:<br><img src="/images/machinelearning/1.png" alt="" title="回归问题"><br>这就是一个监督学习算法的工作方式, h代表hypothesis(假设),h可能的一种表达方式为：h = a + bx,因为只有一个特征/输入变量，因此这样的问题叫作单变量线性回归问题。</p>
+<p>###2.2代价函数<br>参数:为我们的模型选择合适的参数,参数决定了我们得到的直线相对于我们的训练集的准确程度<br>建模误差:模型所预测的值与训练集中实际值之间的差距。<br>代价函数最小化:我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。</p>
+<p>平方误差函数:代价函数也被称作平方误差函数，有时也被称为平方误差代价函数。我们之所以要求出误差的平方和，是因为误差平方代价函数，对于大多数问题，特别是回归问题，都是一个合理的选择。还有其他的代价函数也能很好地发挥作用，但是平方误差代价函数可能是解决回归问题最常用的手段了。</p>
+<p>代价函数的直观理解：<br><img src="/images/machinelearning/2.png" alt="" title="代价函数"></p>
 
   </section>
 
@@ -154,7 +157,7 @@
         
                
             <div class="read-more-item">
-                <span class="read-more-item-dim">Older Post</span>
+                <span class="read-more-item-dim">以前の記事</span>
                 <h2 class="post-list__post-title post-title"><a href="/2018/05/08/deeplearning学习笔记/" title="deeplearning学习笔记">deeplearning学习笔记</a></h2>
                 <p class="excerpt">
                 
